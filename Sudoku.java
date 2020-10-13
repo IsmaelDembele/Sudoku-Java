@@ -275,6 +275,7 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 					valTemp = Integer.parseInt(sTemp);
 					if(matrix[i][j] != valTemp) {
 						text[i][j].setBackground(Color.RED);
+						b=false;
 					}
 				}else {
 					b = false;
