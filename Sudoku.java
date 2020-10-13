@@ -134,7 +134,7 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 		
 		
 		myString = myString.replaceAll("\\s", ""); // remove all the white space
-		
+		jt.setText(myString);
 		
 		if(myString.equals("") || myString.length() == 0)
 			return;
