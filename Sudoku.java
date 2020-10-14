@@ -131,7 +131,7 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 	@Override
 	public void focusLost(FocusEvent e) {
 		JTextField jt = (JTextField) e.getSource();
-		String myString = jt.getText(), myString2;
+		String myString = jt.getText();
 		char c;
 		
 		//Pattern pattern = Pattern.compile("[1-9]");
