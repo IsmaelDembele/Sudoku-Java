@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -129,18 +131,20 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 	@Override
 	public void focusLost(FocusEvent e) {
 		JTextField jt = (JTextField) e.getSource();
-		String myString = jt.getText();
+		String myString = jt.getText(), myString2;
 		char c;
 		
+		//Pattern pattern = Pattern.compile("[1-9]");
+		//Matcher matcher = pattern.matcher(myString);
 		
 		myString = myString.replaceAll("\\s", ""); // remove all the white space
 		jt.setText(myString);
 		
-		if(myString.equals("") || myString.length() == 0)
+		if(myString.equals("") || myString.length() == 0  )
 			return;
 		
-		
 		c = myString.charAt(0);
+	
 		
 		if( (myString.length() > 1) ||  (c < '1') || (c > '9' )) { // if the text is not null
 			jt.setText("");
@@ -276,6 +280,9 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 					if(matrix[i][j] != valTemp) {
 						text[i][j].setBackground(Color.RED);
 						b=false;
+					}else {
+						if(text[i][j].getBackground().equals(Color.RED))
+							text[i][j].setBackground(Color.white);
 					}
 				}else {
 					b = false;
@@ -311,25 +318,4 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
