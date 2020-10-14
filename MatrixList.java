@@ -1,6 +1,6 @@
 
 public class MatrixList {
-	public static final int MATRIXLISTSIZE = 4 ;
+	private int matrixListSize;
 	private int index=0;// represent the current grid loaded
 	private int [][][] matrixList = {
 			{{3,0,7,9,6,0,0,1,5},{4,9,0,0,0,5,7,0,3},{5,0,0,0,0,0,9,2,0},{0,0,0,0,0,1,0,7,2},{6,0,1,0,2,0,0,0,0},{0,0,0,0,4,9,8,0,0},{8,2,3,0,0,0,0,0,7},{0,6,9,0,5,3,2,0,4},{0,5,4,0,1,0,3,9,0}},
@@ -9,14 +9,16 @@ public class MatrixList {
 			{{0,0,1,0,0,2,0,0,4},{9,2,0,0,0,0,0,0,7},{0,0,0,8,0,9,0,0,0},{6,0,0,0,0,0,1,0,0},{0,3,0,0,2,0,0,0,0},{0,1,0,5,0,3,0,4,0},{0,0,0,0,4,5,6,0,0},{3,4,0,6,0,0,0,5,0},{0,0,8,0,0,0,0,7,2}}
 	};
 	
-
+	MatrixList(){
+		matrixListSize = this.matrixList.length;
+	}
 	
 	public int[][] getCurrent(){
 		return matrixList[index];
 	}
 	
 	public int[][] getNext() {
-		if(index == (MATRIXLISTSIZE -1) ) {
+		if(index == (matrixListSize -1) ) {
 			index = 0;
 			return matrixList[index];
 		}else {
