@@ -144,7 +144,7 @@ public class Sudoku extends JFrame implements FocusListener, ActionListener{
 		c = myString.charAt(0);
 	
 		
-		if( (myString.length() > 1) ||  (c < '1') || (c > '9' )) { // if the text is not null
+		if( (myString.length() > 1) ||  (c < '1') || (c > '9' )) { // if the text is not null and not between one and nine. 
 			jt.setText("");
 		}
 	}
